@@ -34,8 +34,8 @@ import { DataService } from '../data.service';
 export class HomeComponent implements OnInit {
   
   itemCount: number;
-  btntxt: string ="Add an item";
-  goalText: string ="Mi primer meta en la vida"; 
+  btntxt: string ="Añadir un infectado";
+  goalText: string ="infectados"; 
   goals=[];
   constructor(private _data: DataService) { }
 
@@ -46,9 +46,9 @@ export class HomeComponent implements OnInit {
 
     this._data.getGoals()
      .subscribe((data: any) => {
-      alert(JSON.stringify(data.infectado)); //cambiado 49-51
+      alert(JSON.stringify(data.infectados)); //cambiado 49-51
 
-      this.goals = data.infectado;
+      this.goals = data.infectados;
       this._data.changeGoal(this.goals);
 
     });
